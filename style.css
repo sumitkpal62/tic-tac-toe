@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    background-color: cornflowerblue;
+}
+
+h1 {
+    text-align: center;
+    height: 15vh;
+    padding-top: 5vh;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: blueviolet;
+    align-content: center;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 0;
+    border-radius: 5px;
+    background-color: cadetblue;
+    color: black;
+    font-size: 3rem;
+
+}
+
+.reset-btn {
+    margin: 15px;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.new-btn {
+    margin: 15px;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.display-msg {
+    font-size: 32px;
+    height: 60vh;
+    padding-top: 100px;
+}
+
+.hide {
+    display: none;
+}
