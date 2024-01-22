@@ -7,6 +7,8 @@ let game = document.querySelector('.game');
 
 let playerX = true;
 
+let count = 0;
+
 let winCondition = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 for (let btn of btnList) {
@@ -20,6 +22,7 @@ for (let btn of btnList) {
             playerX = true;
         }
         btn.disabled = true;
+        count++;
         checkWinner();
     })
 }
@@ -31,7 +34,12 @@ const disableBtn = () => {
 }
 
 const showWinner = (pos1) => {
-    msg.innerText = `Winner is ${pos1}`;
+    if (count === 9) {
+        msg.innerText = `${pos1}`;
+    }
+    else {
+        msg.innerText = `Winner is ${pos1}`;
+    }
     msgBox.classList.remove('hide');
     game.classList.add('hide');
     disableBtn();
@@ -47,6 +55,9 @@ const checkWinner = () => {
                 showWinner(pos1);
             }
         }
+        if (count === 9) {
+            showWinner('Draw');
+        }
     }
 }
 
@@ -55,6 +66,7 @@ const resetGame = () => {
         btn.disabled = false;
         btn.innerText = '';
         playerX = true;
+        count = 0;
     }
     msgBox.classList.add('hide');
     game.classList.remove('hide');
